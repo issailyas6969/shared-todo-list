@@ -1,0 +1,15 @@
+{
+  "name": "shared-todo-list",
+  "version": "1.0.0",
+  "description": "A simple shared to‑do list backed by DynamoDB",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "@aws-sdk/client-dynamodb": "^3.564.0",
+    "@aws-sdk/lib-dynamodb": "^3.564.0"
+  }
+}

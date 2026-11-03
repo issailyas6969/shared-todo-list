@@ -6,7 +6,8 @@ import {
   QueryCommand,
   DeleteCommand
 } from '@aws-sdk/lib-dynamodb';
-import { v4 as uuidv4 } from 'crypto';
+import { randomUUID } from 'crypto';
+
 
 const app = express();
 app.use(express.json());
@@ -199,7 +200,7 @@ app.post('/items', async (req, res) => {
   if (!content || typeof content !== 'string') {
     return res.status(400).json({ error: 'Invalid content' });
   }
-  const id = uuidv4();
+  const id = randomUUID();
   const item = {
     pk: 'LIST',
     sk: `ITEM#${id}`,
